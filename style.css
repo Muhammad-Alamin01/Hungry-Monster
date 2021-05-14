@@ -1,0 +1,36 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+#search-feild{
+    width:60%;
+    margin:0 auto;
+    margin-top: 50px;
+    
+
+}
+#not-found{
+    color:red;
+    text-align: center;
+    font-size:22px;
+    display: none;
+
+}
+#meals-container{
+    width:100%;
+    margin:0 auto;
+}
+.meal-img{
+    width:100%;
+    border-radius:10px;
+}
+
+.single-meal{
+    background:rgb(156, 151, 151);
+    padding:15px;
+    color:#fff;
+    cursor:pointer;
+}
