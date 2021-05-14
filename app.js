@@ -23,6 +23,7 @@ searchButton.addEventListener('click', () => {
             })
     }
     loadData();
+    document.getElementById('search').value = '';
 })
 
 
@@ -37,7 +38,7 @@ const displayData = (data) => {
             <div  id="" class="text-center single-meal m-3">
                 <img  class="meal-img" src=${meal.strMealThumb} alt="meal" />
                 <h3 class="my-3">${meal.strMeal}</h3>
-                <button onclick="foodDetailsDataLoad(${meal.idMeal})" type="button" class="btn btn-primary">Details</button>
+                <a href="#food-details"><button onclick="foodDetailsDataLoad(${meal.idMeal})" type="button" class="btn btn-primary">Details</button></a>
             </div>
         `;
         mealsContainer.appendChild(mealDiv);
@@ -68,12 +69,27 @@ const singleFoodDetails = (data) => {
     const foodDiv = document.createElement('div');
     foodDiv.innerHTML = `
         <div class="row single-meal">
-            <div  id="" class=" col-md-6">
-                <img src=${data.strMealThumb} alt="" />
+            <div  id="" class=" text-center col-md-6">
+                <img id="details-img" src=${data.strMealThumb} alt="" />
                 <h3 class="my-3">${data.strMeal}</h3>
+                <br/><br/>
+                <a href="#"><button type="button" class="btn btn-primary">Order Now</button></a>
             </div>
             <div class="col-md-6">
-                sds
+                <h4 class="my-3">Ingredient</h4>
+                    <ul>
+                        <li>${data.strIngredient1} - ${data.strMeasure1}</li>
+                        <li>${data.strIngredient2} - ${data.strMeasure2}</li>
+                        <li>${data.strIngredient3} - ${data.strMeasure3}</li>
+                        <li>${data.strIngredient4} - ${data.strMeasure4}</li>
+                        <li>${data.strIngredient5} - ${data.strMeasure5}</li>
+                        <li>${data.strIngredient6} - ${data.strMeasure6}</li>
+                        <li>${data.strIngredient7} - ${data.strMeasure7}</li>
+                        <li>${data.strIngredient8} - ${data.strMeasure8}</li>
+                        <li>${data.strIngredient9} - ${data.strMeasure9}</li>
+                        <li>${data.strIngredient10} - ${data.strMeasure10}</li>
+                    </ul>
+                <p>${data.strInstructions}</p>
             </div>
         </div>
 
